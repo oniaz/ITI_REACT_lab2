@@ -3,44 +3,49 @@ import { Link } from 'react-router-dom'
 function TodoItem({ item, onToggle, onDelete }) {
 
     return (
-        <div className="bg-white shadow-md rounded-2xl p-5 mb-4 border border-gray-100 hover:shadow-lg transition duration-200">
+        <div className="mb-4 rounded-3xl border border-slate-100 bg-white p-5 shadow-sm transition hover:shadow-md">
 
-            <h2 className="text-lg font-semibold text-gray-800 mb-2">
-                {item.title}
-            </h2>
+            <div className="mb-3 flex items-start justify-between gap-3">
+                <h2 className="text-xl font-bold text-slate-700">
+                    {item.title}
+                </h2>
 
-            {/* <p className="text-gray-600 text-sm mb-3">
-                {item.description}
-            </p> */}
+                <span
+                    className={`rounded-full px-3 py-1 text-xs font-semibold ${item.completed
+                        ? 'bg-emerald-100 text-emerald-700'
+                        : 'bg-amber-100 text-amber-700'
+                        }`}
+                >
+                    {item.completed ? 'Completed' : 'In Progress'}
+                </span>
+            </div>
 
-                <Link to={`/task/${item.id}`} className="hover:text-blue-600">
-                    <h2 className="text-lg font-semibold text-gray-800">
-                        Go to task page
-                    </h2>
-                </Link>
+            <p className="mb-4 text-sm text-slate-500">
+                {item.description || 'No description added yet.'}
+            </p>
 
-            <span
-                className={`text-xs font-medium px-3 py-1 rounded-full ${item.completed
-                    ? "bg-green-100 text-green-700"
-                    : "bg-yellow-100 text-yellow-700"
-                    }`}
+            <Link
+                to={`/task/${item.id}`}
+                className="inline-block rounded-full bg-sky-100 px-3 py-1 text-sm font-semibold text-sky-700 transition hover:bg-sky-200"
             >
-                {item.completed ? 'Completed' : 'Not Completed'}
-            </span>
+                Open task details
+            </Link>
 
-            <button
-                onClick={() => onToggle(item.id)}
-                className="text-xs font-medium px-3 py-1 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 transition"
-            >
-                {item.completed ? 'Mark Incomplete' : 'Mark Complete'}
-            </button>
+            <div className="mt-4 flex flex-wrap gap-2">
+                <button
+                    onClick={() => onToggle(item.id)}
+                    className="rounded-full bg-violet-100 px-3 py-1 text-xs font-semibold text-violet-700 transition hover:bg-violet-200"
+                >
+                    {item.completed ? 'Mark Incomplete' : 'Mark Complete'}
+                </button>
 
-            <button
-                onClick={() => onDelete(item.id)}
-                className="text-xs font-medium px-3 py-1 rounded-full bg-red-100 text-red-700 hover:bg-red-200 transition"
-            >
-                Delete
-            </button>
+                <button
+                    onClick={() => onDelete(item.id)}
+                    className="rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700 transition hover:bg-rose-200"
+                >
+                    Delete
+                </button>
+            </div>
 
         </div>
     )

@@ -47,10 +47,9 @@ function Tasks() {
 
 
     return (
-        <div>
-            <h1>My Todo App</h1>
-            <FilterButtons currentFilter={filter} onFilterChange={setFilter} />
+        <div className="mx-auto max-w-4xl">
             <TodoForm onAddTodo={handleAddTodo} />
+            <FilterButtons currentFilter={filter} onFilterChange={setFilter} />
             <TodoList todos={filteredTodos} onToggle={handleToggle} onDelete={handleDelete} />
         </div>
     )

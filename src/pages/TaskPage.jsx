@@ -48,9 +48,9 @@ function Task() {
 
     if (!task) {
         return (
-            <div className="max-w-4xl mx-auto p-6">
-                <h1 className="text-2xl font-bold mb-4">Task Not Found</h1>
-                <Link to="/tasks" className="text-blue-500 hover:underline">
+            <div className="mx-auto max-w-3xl rounded-3xl border border-slate-100 bg-white p-8 text-center shadow-sm">
+                <h1 className="mb-4 text-2xl font-bold text-slate-700">Task Not Found</h1>
+                <Link to="/tasks" className="font-semibold text-sky-700 hover:text-sky-800">
                     Back to Tasks
                 </Link>
             </div>
@@ -58,15 +58,15 @@ function Task() {
     }
 
     return (
-        <div className="max-w-4xl mx-auto p-6">
-            <div className="bg-white shadow-lg rounded-2xl p-8">
-                <h1 className="text-3xl font-bold mb-4">{task.title}</h1>
+        <div className="mx-auto max-w-4xl rounded-3xl border border-slate-100 bg-white p-8 shadow-sm">
+            <div className="rounded-2xl bg-white p-7">
+                <h1 className="mb-4 text-3xl font-bold text-slate-700">{task.title}</h1>
 
                 <div className="mb-6">
                     <span
-                        className={`text-sm font-medium px-4 py-2 rounded-full ${task.completed
-                            ? "bg-green-100 text-green-700"
-                            : "bg-yellow-100 text-yellow-700"
+                        className={`rounded-full px-4 py-2 text-sm font-semibold ${task.completed
+                            ? "bg-emerald-100 text-emerald-700"
+                            : "bg-amber-100 text-amber-700"
                             }`}
                     >
                         {task.completed ? 'Completed' : 'In Progress'}
@@ -74,26 +74,26 @@ function Task() {
                 </div>
 
                 <div className="mb-4">
-                    <h2 className="text-lg font-semibold text-gray-700 mb-2">Description</h2>
-                    <p className="text-gray-600">{task.description}</p>
+                    <h2 className="mb-2 text-lg font-semibold text-slate-700">Description</h2>
+                    <p className="text-slate-600">{task.description || 'No description provided.'}</p>
                 </div>
 
                 <div className="mb-6">
-                    <h2 className="text-lg font-semibold text-gray-700 mb-2">Task ID</h2>
-                    <p className="text-gray-500 text-sm font-mono">{task.id}</p>
+                    <h2 className="mb-2 text-lg font-semibold text-slate-700">Task ID</h2>
+                    <p className="font-mono text-sm text-slate-500">{task.id}</p>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                     <button
                         onClick={handleToggle}
-                        className="px-6 py-2 rounded-lg font-medium bg-blue-500 text-white hover:bg-blue-600 transition"
+                        className="rounded-full bg-sky-200 px-5 py-2 font-semibold text-sky-800 transition hover:bg-sky-300"
                     >
                         {task.completed ? 'Mark as Incomplete' : 'Mark as Complete'}
                     </button>
 
                     <button
                         onClick={handleDelete}
-                        className="px-6 py-2 rounded-lg font-medium bg-red-500 text-white hover:bg-red-600 transition"
+                        className="rounded-full bg-amber-200 px-5 py-2 font-semibold text-amber-800 transition hover:bg-amber-300"
                     >
                         Delete Task
                     </button>
