@@ -3,10 +3,17 @@
 ## Project: Advanced Todo App Features:
 ### Requirements
 
-- add task
-- delete task
-- toggle complete
-- filter (all / completed)
-- persist in localStorage
+- Add task
+- Delete task
+- Toggle complete
+- Filter (all / completed)
+- Persist in localStorage
 - useEffect for saving
- 
+
+- Multiple pages
+    - Home
+    - Tasks
+    - Profile
+- Navigation bar
+- Dynamic routing:
+    - /task/:id
