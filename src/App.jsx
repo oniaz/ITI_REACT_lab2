@@ -7,7 +7,7 @@ import Task from './pages/TaskPage'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ITI_REACT_lab2">
       <div className="min-h-screen bg-taupe-100 px-4 py-6 text-slate-700 font-[ui-rounded,'SF_Pro_Rounded','Avenir_Next',ui-sans-serif,sans-serif] sm:px-8">
         <Navbar />
 
