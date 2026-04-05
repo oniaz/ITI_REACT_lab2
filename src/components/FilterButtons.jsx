@@ -15,7 +15,7 @@ function FilterButtons({ currentFilter, onFilterChange }) {
   };
 
   return (
-    <div className="mb-6 flex flex-wrap gap-2 rounded-2xl border border-slate-100 bg-white p-2 shadow-sm">
+    <div className="mb-6 mt-6 flex flex-wrap gap-2 rounded-2xl border border-slate-100 bg-white p-2 shadow-sm">
       <button
         onClick={() => onFilterChange('all')}
         className={filterButtonClass('all', currentFilter === 'all')}
