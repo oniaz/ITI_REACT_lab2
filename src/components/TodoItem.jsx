@@ -1,6 +1,7 @@
 import React from 'react'
 
-function TodoItem({ item }) {
+function TodoItem({ item, onToggle, onDelete }) {
+    
     // const itemTest = item || {
     //     id: 1,
     //     title: 'Test Todo Item',
@@ -21,12 +22,26 @@ function TodoItem({ item }) {
 
             <span
                 className={`text-xs font-medium px-3 py-1 rounded-full ${item.completed
-                        ? "bg-green-100 text-green-700"
-                        : "bg-yellow-100 text-yellow-700"
+                    ? "bg-green-100 text-green-700"
+                    : "bg-yellow-100 text-yellow-700"
                     }`}
             >
                 {item.completed ? 'Completed' : 'Not Completed'}
             </span>
+
+            <button
+                onClick={() => onToggle(item.id)}
+                className="text-xs font-medium px-3 py-1 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 transition"
+            >
+                {item.completed ? 'Mark Incomplete' : 'Mark Complete'}
+            </button>
+
+            <button
+                onClick={() => onDelete(item.id)}
+                className="text-xs font-medium px-3 py-1 rounded-full bg-red-100 text-red-700 hover:bg-red-200 transition"
+            >
+                Delete
+            </button>
 
         </div>
     )

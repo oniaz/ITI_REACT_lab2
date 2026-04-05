@@ -1,9 +1,7 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 // import { useState } from 'react'
-function TodoList({ todos }) {
-
-    // const [todos, setTodos] = useState([])
+function TodoList({ todos, onToggle, onDelete }) {
 
     // const itemsList = [{
     //     id: 1,
@@ -17,9 +15,10 @@ function TodoList({ todos }) {
     //     completed: true
     // }
     // ]
+
     return (
         todos.map((item) => (
-            <TodoItem key={item.id} item={item} />
+            <TodoItem key={item.id} item={item} onToggle={onToggle} onDelete={onDelete} />
         ))
     )
 }

@@ -16,13 +16,25 @@ function App() {
       description: description,
       completed: false
     };
-    setTodos([...todos, newTodo]); // Add to array
+    setTodos([...todos, newTodo]);
+  };
+
+  const handleToggle = (id) => {
+    setTodos(todos.map(todo =>
+      todo.id === id
+        ? { ...todo, completed: !todo.completed }
+        : todo
+    ));
+  };
+
+  const handleDelete = (id) => {
+    setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return (
     <div>
       <h1>My Todo App</h1>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onToggle={handleToggle} onDelete={handleDelete} />
       <TodoForm onAddTodo={handleAddTodo} />
     </div>
   )
