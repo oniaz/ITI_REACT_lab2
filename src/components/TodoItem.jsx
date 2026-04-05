@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 function TodoItem({ item, onToggle, onDelete }) {
 
@@ -9,9 +9,15 @@ function TodoItem({ item, onToggle, onDelete }) {
                 {item.title}
             </h2>
 
-            <p className="text-gray-600 text-sm mb-3">
+            {/* <p className="text-gray-600 text-sm mb-3">
                 {item.description}
-            </p>
+            </p> */}
+
+                <Link to={`/task/${item.id}`} className="hover:text-blue-600">
+                    <h2 className="text-lg font-semibold text-gray-800">
+                        Go to task page
+                    </h2>
+                </Link>
 
             <span
                 className={`text-xs font-medium px-3 py-1 rounded-full ${item.completed

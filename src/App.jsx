@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Tasks from './pages/Tasks'
 import Profile from './pages/Profile'
+import Task from './pages/TaskPage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/task/:id" element={<Task />} />
         </Routes>
       </div>
     </BrowserRouter>

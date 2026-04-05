@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://oniaz.github.io/ITI_REACT_lab2",
+  "homepage": "https://oniaz.github.io/ITI_React_lab2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
