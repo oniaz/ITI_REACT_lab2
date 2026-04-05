@@ -5,7 +5,7 @@ function TodoList({ todos, onToggle, onDelete }) {
     if (todos.length === 0) {
         return (
             <div className="rounded-2xl border border-dashed border-sky-200 bg-white p-8 text-center text-slate-500">
-                No tasks yet. Add your first pastel task above.
+                No tasks yet. Add your first task above.
             </div>
         );
     }
