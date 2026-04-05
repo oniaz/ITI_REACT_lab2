@@ -3,12 +3,20 @@ import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
 import FilterButtons from './components/FilterButtons'
 
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
 
 function App() {
-  const [todos, setTodos] = useState([])
+
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem('todos');
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
+
   const [filter, setFilter] = useState('all');
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   const handleAddTodo = (title, description) => {
     const newTodo = {
