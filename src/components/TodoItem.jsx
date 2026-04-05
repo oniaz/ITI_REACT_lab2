@@ -1,13 +1,6 @@
 import React from 'react'
 
 function TodoItem({ item, onToggle, onDelete }) {
-    
-    // const itemTest = item || {
-    //     id: 1,
-    //     title: 'Test Todo Item',
-    //     description: "item 1 for testing purposes. this is the description for item 1.",
-    //     completed: false
-    // }
 
     return (
         <div className="bg-white shadow-md rounded-2xl p-5 mb-4 border border-gray-100 hover:shadow-lg transition duration-200">
