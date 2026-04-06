@@ -1,6 +1,9 @@
 # ITI REACT Lab 2
 
-## Project: Advanced Todo App Features:
+## Project: Advanced Todo App
+
+[Live Demo](https://oniaz.github.io/ITI_REACT_lab2/)
+
 ### Requirements
 
 - Add task
